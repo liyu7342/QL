@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7ACB753-ACCE-4D50-BEB1-5F8F8D8BA9B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QL</RootNamespace>
+    <AssemblyName>QL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Cache.cs" />
+    <Compile Include="Core\Caching\MemoryCaching.cs" />
+    <Compile Include="Core\Caching\ICaching.cs" />
+    <Compile Include="Core\Caching\ICachingFactory.cs" />
+    <Compile Include="Core\Caching\MemoryCachingFactory.cs" />
+    <Compile Include="Core\Data\DbObjectExtensions.cs" />
+    <Compile Include="Core\Data\DbObject.cs" />
+    <Compile Include="Core\Data\DbObjectPropertyDescriptor.cs" />
+    <Compile Include="Core\Data\CSVTextReader.cs" />
+    <Compile Include="Core\Drawing\CaptchaImage.cs" />
+    <Compile Include="Core\Extensions\Collections.cs" />
+    <Compile Include="Core\Extensions\DataTables.cs" />
+    <Compile Include="Core\Extensions\DateTimes.cs" />
+    <Compile Include="Core\Extensions\Dictionaries.cs" />
+    <Compile Include="Core\Extensions\Images.cs" />
+    <Compile Include="Core\Extensions\Objects.cs" />
+    <Compile Include="Core\Extensions\Strings.cs" />
+    <Compile Include="Core\Extensions\Types.cs" />
+    <Compile Include="Core\Log\ILoggerFactory.cs" />
+    <Compile Include="Core\Log\FileLoggerFactory.cs" />
+    <Compile Include="Core\Log\FileLogger.cs" />
+    <Compile Include="Core\Log\ILogger.cs" />
+    <Compile Include="Core\Log\Logger.cs" />
+    <Compile Include="Core\Net\DnsMxRecord.cs" />
+    <Compile Include="Core\Net\Files.cs" />
+    <Compile Include="Core\Net\HttpHelper.cs" />
+    <Compile Include="Core\Net\Mail\EmailMessage.cs" />
+    <Compile Include="Core\Net\Mail\MailMessager.cs" />
+    <Compile Include="Core\Net\Mail\MailServer.cs" />
+    <Compile Include="Core\Net\Parameters.cs" />
+    <Compile Include="Core\Net\RequestMethod.cs" />
+    <Compile Include="Core\Net\SyncHttpRequest.cs" />
+    <Compile Include="Core\Net\UploadFile.cs" />
+    <Compile Include="Core\ObjectPool\DictionaryObjectPool.cs" />
+    <Compile Include="Core\ObjectPool\IObjectPool.cs" />
+    <Compile Include="Core\ObjectPool\ObjectPoolBase.cs" />
+    <Compile Include="Core\ObjectPool\ObjectPoolContext.cs" />
+    <Compile Include="Core\ObjectPool\ObjectPoolExtensions.cs" />
+    <Compile Include="Core\ObjectPool\ThreadCallObjectPool.cs" />
+    <Compile Include="Core\ObjectPool\WebApplicationObjectPool.cs" />
+    <Compile Include="Core\ObjectPool\WebRequestObjectPool.cs" />
+    <Compile Include="Core\ObjectPool\WebSessionObjectPool.cs" />
+    <Compile Include="Core\Settings.cs" />
+    <Compile Include="Core\Utility.cs" />
+    <Compile Include="Core\WebContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
